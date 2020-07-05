@@ -2,3 +2,5 @@ add_executable(
     list-demo
     main.cpp
 )
+
+target_link_libraries(list-demo PRIVATE list)

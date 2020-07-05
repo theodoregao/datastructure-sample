@@ -1,0 +1,10 @@
+file(GLOB SOURCE_FILE
+  "*.cpp"
+)
+
+add_library(
+    list SHARED
+    ${SOURCE_FILE}
+)
+
+target_include_directories(list PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")
