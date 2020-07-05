@@ -123,36 +123,6 @@ void LinkedList::clear()
     _size = 0;
 }
 
-void LinkedList::sortByPrice()
-{
-    sortInternal(lowPrice);
-}
-
-void LinkedList::sortByPriceDescend()
-{
-    sortInternal(highPrice);
-}
-
-void LinkedList::sortByIsbn()
-{
-    sortInternal(lowIsbn);
-}
-
-void LinkedList::sortByIsbnDescend()
-{
-    sortInternal(highIsbn);
-}
-
-void LinkedList::sortByDate()
-{
-    sortInternal(lowDate);
-}
-
-void LinkedList::sortByDateDescend()
-{
-    sortInternal(highDate);
-}
-
 void LinkedList::remove(Node *pre, Node *p)
 {
     if (pre == NULL || p == NULL)

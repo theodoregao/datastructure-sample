@@ -1,5 +1,6 @@
 #pragma once
 
+#include "BobbleSort.h"
 #include "Book.h"
 
 typedef struct _Node
@@ -8,7 +9,7 @@ typedef struct _Node
     _Node *next;
 } Node;
 
-class LinkedList
+class LinkedList : public BobbleSort
 {
 public:
     LinkedList();
@@ -22,12 +23,6 @@ public:
     int size();
     bool isEmpty();
     void clear();
-    void sortByPrice();
-    void sortByPriceDescend();
-    void sortByIsbn();
-    void sortByIsbnDescend();
-    void sortByDate();
-    void sortByDateDescend();
 
 private:
     Node _head;
@@ -36,5 +31,5 @@ private:
     void remove(Node *pre, Node *p);
     void internalSearch(Node *&p, Node *&pre, char *isbn);
     void swap(Node *pre, Node *&q, Node *&p);
-    void sortInternal(bool pFuncLess(Book, Book));
+    void sortInternal(bool pFuncLess(Book, Book)) override;
 };

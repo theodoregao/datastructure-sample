@@ -3,5 +3,5 @@ add_executable(
     main.cpp
 )
 
-link_directories(${BUILD_DIR}/libs/Debug)
+link_directories(${BUILD_DIR}/libs/list/Debug)
 target_link_libraries(list-demo PRIVATE list)

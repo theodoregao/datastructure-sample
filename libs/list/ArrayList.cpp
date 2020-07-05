@@ -82,36 +82,6 @@ void ArrayList::clear()
     _books = (Book *)malloc(_capacity * sizeof(Book));
 }
 
-void ArrayList::sortByPrice()
-{
-    sortInternal(lowPrice);
-}
-
-void ArrayList::sortByPriceDescend()
-{
-    sortInternal(highPrice);
-}
-
-void ArrayList::sortByIsbn()
-{
-    sortInternal(lowIsbn);
-}
-
-void ArrayList::sortByIsbnDescend()
-{
-    sortInternal(highIsbn);
-}
-
-void ArrayList::sortByDate()
-{
-    sortInternal(lowDate);
-}
-
-void ArrayList::sortByDateDescend()
-{
-    sortInternal(highDate);
-}
-
 void ArrayList::resize()
 {
     Book *books = (Book *)realloc(_books, _capacity * 2 * sizeof(Book));

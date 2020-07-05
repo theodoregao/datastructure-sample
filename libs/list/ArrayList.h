@@ -1,8 +1,9 @@
 #pragma once
 
+#include "BobbleSort.h"
 #include "Book.h"
 
-class ArrayList
+class ArrayList : public BobbleSort
 {
 public:
     ArrayList();
@@ -16,12 +17,6 @@ public:
     int size();
     bool isEmpty();
     void clear();
-    void sortByPrice();
-    void sortByPriceDescend();
-    void sortByIsbn();
-    void sortByIsbnDescend();
-    void sortByDate();
-    void sortByDateDescend();
 
 private:
     const int DEFAULT_SIZE = 1;
@@ -32,5 +27,5 @@ private:
     void resize();
     int searchIndex(char *isbn);
     void swap(int i, int j);
-    void sortInternal(bool pFuncLess(Book, Book));
+    void sortInternal(bool pFuncLess(Book, Book)) override;
 };
