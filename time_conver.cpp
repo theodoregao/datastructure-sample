@@ -1,8 +1,5 @@
 #include <cstring>
-<<<<<<< HEAD
-=======
 #include <iomanip>
->>>>>>> Add time convert sample
 #include <iostream>
 #include <locale>
 #include <string>
@@ -37,17 +34,10 @@ std::vector<std::string> split(std::string str)
     int s, e;
     for (s = 0, e = 0; s < str.length() && e < str.length();)
     {
-<<<<<<< HEAD
-        while (SEPARATORS.find(cstr[s]) != std::string::npos)
-            s++;
-        e = s + 1;
-        while (SEPARATORS.find(cstr[e]) == std::string::npos)
-=======
         while (s < str.length() && SEPARATORS.find(cstr[s]) != std::string::npos)
             s++;
         e = s + 1;
         while (e < str.length() && SEPARATORS.find(cstr[e]) == std::string::npos)
->>>>>>> Add time convert sample
             e++;
         vec.push_back(str.substr(s, e - s));
         s = e;
@@ -57,11 +47,8 @@ std::vector<std::string> split(std::string str)
 
 void Handle12To24()
 {
-<<<<<<< HEAD
-=======
     std::cout << "Please input your time with hh:mm:ss am format" << std::endl;
 
->>>>>>> Add time convert sample
     std::string buffer;
     std::cin.ignore(1024, '\n');
     std::getline(std::cin, buffer);
@@ -87,19 +74,6 @@ void Handle12To24()
         return;
     }
 
-<<<<<<< HEAD
-    std::locale loc;
-    std::string ampm = std::toupper(items[3], loc);
-    if (ampm == "AM")
-    {
-    }
-    else if (ampm == "PM")
-    {
-    }
-    else
-    {
-        std::cout << "Invalid input, am pm value not recognized" << std::endl;
-=======
     std::string ampm = items[3];
     if (ampm == "AM" || ampm == "Am" || ampm == "aM" || ampm == "am")
     {
@@ -158,7 +132,6 @@ void Handle12To24()
     else
     {
         std::cout << "Invalid input, am/pm value not recognized" << std::endl;
->>>>>>> Add time convert sample
     }
 }
 
