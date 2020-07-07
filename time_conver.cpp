@@ -74,65 +74,49 @@ void Handle12To24()
         return;
     }
 
+    if (hh <= 0 || hh > 12)
+    {
+        std::cout << "Invalid input, 12hr format hh need to between (0, 12]" << std::endl;
+        return;
+    }
+    else if (mm < 0 || mm >= 60)
+    {
+        std::cout << "Invalid input, 12hr format mm need to between [0, 60)" << std::endl;
+        return;
+    }
+    else if (ss < 0 || ss >= 60)
+    {
+        std::cout << "Invalid input, 12hr format ss need to between [0, 60)" << std::endl;
+        return;
+    }
+
     std::string ampm = items[3];
     if (ampm == "AM" || ampm == "Am" || ampm == "aM" || ampm == "am")
     {
-        if (hh <= 0 || hh > 12)
+
+        if (hh == 12)
         {
-            std::cout << "Invalid input, 12hr format hh need to between (0, 12]" << std::endl;
-        }
-        else if (mm < 0 || mm >= 60)
-        {
-            std::cout << "Invalid input, 12hr format mm need to between [0, 60)" << std::endl;
-        }
-        else if (ss < 0 || ss >= 60)
-        {
-            std::cout << "Invalid input, 12hr format ss need to between [0, 60)" << std::endl;
-        }
-        else
-        {
-            if (hh == 12)
-            {
-                hh = 0;
-            }
-            std::cout.fill('0');
-            std::cout << "24hr format of " << buffer << " is "
-                      << std::setw(2) << hh << ":"
-                      << std::setw(2) << mm << ":"
-                      << std::setw(2) << ss << std::endl;
+            hh = 0;
         }
     }
     else if (ampm == "PM" || ampm == "Pm" || ampm == "pM" || ampm == "pm")
     {
-        if (hh <= 0 || hh > 12)
+        if (hh != 12)
         {
-            std::cout << "Invalid input, 12hr format hh need to between (0, 12]" << std::endl;
-        }
-        else if (mm < 0 || mm >= 60)
-        {
-            std::cout << "Invalid input, 12hr format mm need to between [0, 60)" << std::endl;
-        }
-        else if (ss < 0 || ss >= 60)
-        {
-            std::cout << "Invalid input, 12hr format ss need to between [0, 60)" << std::endl;
-        }
-        else
-        {
-            if (hh != 12)
-            {
-                hh += 12;
-            }
-            std::cout.fill('0');
-            std::cout << "24hr format of " << buffer << " is "
-                      << std::setw(2) << hh << ":"
-                      << std::setw(2) << mm << ":"
-                      << std::setw(2) << ss << std::endl;
+            hh += 12;
         }
     }
     else
     {
         std::cout << "Invalid input, am/pm value not recognized" << std::endl;
+        return;
     }
+
+    std::cout.fill('0');
+    std::cout << "24hr format of " << buffer << " is "
+              << std::setw(2) << hh << ":"
+              << std::setw(2) << mm << ":"
+              << std::setw(2) << ss << std::endl;
 }
 
 void Handle24To12()
@@ -159,7 +143,6 @@ int main()
         default:
             break;
         }
-        std::cin.ignore(1024, '\n');
     } while (cmd != 'q');
     return 0;
 }
