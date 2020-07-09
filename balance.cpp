@@ -7,7 +7,7 @@ int main()
 {
     double beginningBalance;
     int numberOfChecks;
-    double fee = 10;
+    double fee = 10; // monthly service fee
 
     cout << "Please input the beginning balance: ";
     cin >> beginningBalance;
@@ -18,7 +18,7 @@ int main()
     }
     else if (beginningBalance < 300)
     {
-        fee += 25;
+        fee += 25; // low balance fee
     }
 
     do
@@ -27,6 +27,7 @@ int main()
         cin >> numberOfChecks;
         if (numberOfChecks >= 0)
         {
+            // calculate check fee
             if (numberOfChecks <= 20)
             {
                 fee += numberOfChecks * 1.0;
