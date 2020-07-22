@@ -3,6 +3,8 @@
 
 using namespace std;
 
+// add one line of comment here
+// add more comment
 int main()
 {
     double beginningBalance;
