@@ -121,6 +121,7 @@ void Handle12To24()
 
 void Handle24To12()
 {
+  // OK, I will do that soon.
 }
 
 int main()
